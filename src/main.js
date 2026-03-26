@@ -43,18 +43,10 @@ function calculateBonusByProfit(index, total, seller) { // Расчет бону
 function analyzeSalesData(data, options) {
 
     //Проверка входящих данных
-    if (!data) {
-        throw new Error("Отсутствуют данные для анализа");
-    }
-    if (!Array.isArray(data.sellers)) {
-        throw new Error("Неверный формат данных: sellers должен быть массивом");
-    }
-    if (!Array.isArray(data.products)) {
-        throw new Error("Неверный формат данных: products должен быть массивом");
-    }
-    if (!Array.isArray(data.purchase_records)) {
-        throw new Error("Неверный формат данных: purchase_records должен быть массивом");
-    }
+    if (!data) throw new Error("Отсутствуют данные для анализа");
+    if (!Array.isArray(data.sellers)) throw new Error("Неверный формат данных: sellers должен быть массивом"); 
+    if (!Array.isArray(data.products)) throw new Error("Неверный формат данных: products должен быть массивом");
+    if (!Array.isArray(data.purchase_records)) throw new Error("Неверный формат данных: purchase_records должен быть массивом");
     if (!options || typeof options.calculateRevenue !== "function" || typeof options.calculateBonus !== "function") {
         throw new Error("Отсутствуют необходимые функции в опциях");
     }
