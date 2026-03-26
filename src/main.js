@@ -25,7 +25,7 @@ function calculateBonusByProfit(index, total, seller) { // Расчет бону
     let bonus = 0;
     if (index === 0) bonus = profit * 0.15; // 15% для продавца, который принёс наибольшую прибыль
     else if (index === 1 || index === 2) bonus = profit * 0.10; // 10% для продавцов, которые по прибыли находятся на втором и третьем месте
-    else if (index === total) return 0; // 0% для последнего продавца
+    else if (index === total - 1) return 0; // 0% для последнего продавца
     else bonus = profit * 0.05; // 5% для всех остальных продавцов, кроме самого последнего
 
     return bonus;
