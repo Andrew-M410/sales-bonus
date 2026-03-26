@@ -4,9 +4,10 @@
  * @param _product карточка товара
  * @returns {number}
  */
-function calculateSimpleRevenue(purchase, _product) { // Расчет выручки от операции
-    const { discount, sale_price, quantity } = purchase;
+function calculateSimpleRevenue(purchase, _product) {
+    const { discount = 0, sale_price, quantity } = purchase;
     return sale_price * quantity * (1 - discount / 100);
+   // @TODO: Расчет выручки от операции
 }
 
 
@@ -20,7 +21,7 @@ function calculateSimpleRevenue(purchase, _product) { // Расчет выруч
  */
 function calculateBonusByProfit(index, total, seller) { // Расчет бонуса от позиции в рейтинге
     
-    const { profit } = seller;
+    const profit = seller.profit || 0;
 
     let bonus = 0;
     if (index === 0) bonus = profit * 0.15; // 15% для продавца, который принёс наибольшую прибыль
@@ -29,6 +30,7 @@ function calculateBonusByProfit(index, total, seller) { // Расчет бону
     else bonus = profit * 0.05; // 5% для всех остальных продавцов, кроме самого последнего
 
     return bonus;
+    // @TODO: Расчет бонуса от позиции в рейтинге
 }
 
 
