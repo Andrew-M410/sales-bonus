@@ -1,4 +1,4 @@
-const data = {
+const data = { // ================================================= Покупатели
     "customers": [
         {
             "id": "customer_1",
@@ -80,7 +80,7 @@ const data = {
             "workplace": "BuildCorp",
             "position": "Manager"
         }
-    ],
+    ], // ======================================================== ТОВАРЫ
     "products": [
         {
             "name": "Cement #100",
@@ -782,7 +782,7 @@ const data = {
             "purchase_price": 637.15,
             "sale_price": 180.25
         }
-    ],
+    ],  // ======================================================== ПРОДАВЦЫ
     "sellers": [
         {
             "id": "seller_1",
@@ -819,7 +819,7 @@ const data = {
             "start_date": "2024-09-16",
             "position": "Seller"
         }
-    ],
+    ], // ======================================================== ЧЕКИ
     "purchase_records": [
         {
             "receipt_id": "receipt_1",
